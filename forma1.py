@@ -41,6 +41,10 @@ for versenyzo in f1:
 print(f'A legtöbb futamot teljesített versenyző: {legtobb_futam[0]}')
 
 # 4. Átlagosan hány futamot teljesítettek a versenyzők?
+atlagos_futamszam = 0
+for versenyzo in f1:
+    atlagos_futamszam += versenyzo[3]
+print(f'Az átlagos futamszám: {atlagos_futamszam / len(f1)}')
 
 
 # with open('./kiirt_adatok/statisztika.txt', 'w', encoding='utf-8') as celfajl:
@@ -50,4 +54,4 @@ print(f'A legtöbb futamot teljesített versenyző: {legtobb_futam[0]}')
 # print("A beolvasott fájlban összesen ____ versenyző szerepel.")
 # print("A legtöbb futamot nyert versenyző: ____")
 # print("A legtöbb futamot teljesített versenyző: ____")
-print("Az átlagos futamszám: ____")
+# print("Az átlagos futamszám: ____")

@@ -18,10 +18,6 @@ with open('./beolvasando_adatok/f1.txt', 'r', encoding='utf-8') as forrasfajl:
         adatok = sor.strip().split(';')
         nev = str(adatok[0])
         csapat = str(adatok[1])
-        # if adatok[2]:
-        #     halEv = int(adatok[2])
-        # else:
-        #     halEv = 2005
         gyozelmek = int(adatok[2])
         teljesitett_futamok = int(adatok[3])
 
@@ -33,11 +29,17 @@ print(f'A beolvasott fájlban összesen {len(f1)} versenyző szerepel.')
 # 2. Melyik versenyző nyerte a legtöbb futamot?
 legjobb_versenyzo = None
 for versenyzo in f1:
-    if legjobb_versenyzo is None or versenyzo[2] < legjobb_versenyzo[2]:
+    if legjobb_versenyzo is None or versenyzo[2] > legjobb_versenyzo[2]:
         legjobb_versenyzo = versenyzo
 print(f'A legtöbb futamot nyert versenyző: {legjobb_versenyzo[0]}')
 
 # 3. Ki teljesített a legtöbb futamot?
+legtobb_futam = None
+for versenyzo in f1:
+    if legtobb_futam is None or versenyzo[3] > legtobb_futam[3]:
+        legtobb_futam = versenyzo
+print(f'A legtöbb futamot teljesített versenyző: {legtobb_futam[0]}')
+
 # 4. Átlagosan hány futamot teljesítettek a versenyzők?
 
 
@@ -47,5 +49,5 @@ print(f'A legtöbb futamot nyert versenyző: {legjobb_versenyzo[0]}')
 
 # print("A beolvasott fájlban összesen ____ versenyző szerepel.")
 # print("A legtöbb futamot nyert versenyző: ____")
-print("A legtöbb futamot teljesített versenyző: ____")
+# print("A legtöbb futamot teljesített versenyző: ____")
 print("Az átlagos futamszám: ____")
